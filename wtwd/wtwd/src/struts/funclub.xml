@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <package name="struts2" extends="struts-default" namespace="/">
+		<interceptors>
+			<interceptor name="checkLogin" class="com.cncoman.product.filter.SecurityInterceptor"></interceptor>
+			<interceptor-stack name="myStack">
+				<interceptor-ref name="defaultStack" />
+				<interceptor-ref name="checkLogin" />				
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="myStack" />
+		<global-results>
+			<result name="login">/system/needLogon.html</result>
+			<result name="error">/index.jsp</result>
+			<result name="url">${url}</result>
+			<result name="frequentClick">/system/frequentClick.html</result>
+		</global-results>
+
+		<!-- 缤纷乐园 -->
+		<action name="addCate" class="funCluAction"
+			method="addCategory">
+			<result name="SUCEESS" type="redirect">
+				/categoryManage
+			</result>
+			<result name="Fail">
+				/customerService/funclub/addCategory.jsp
+			</result>
+		</action>
+		<action name="categoryManage" class="funCluAction"
+			method="Manage_">
+			<result name="categoryList">
+				/customerService/funclub/category_manager.jsp
+			</result>
+		</action>
+		<action name="updateShowId" class="funCluAction"
+			method="updateShowId">
+			<result name="success" type="redirect">
+				/categoryManage
+			</result>
+		</action>
+		<action name="addFileInfo" class="funCluAction"
+			method="addFileInfo">
+			<result name="soft" type="redirect">/SoftFileManger</result>
+			<result name="game" type="redirect">/GameFileManger</result>
+			<result name="essential" type="redirect">/Essentail</result>
+			<result name="Fail">
+				/customerService/funclub/addFile.jsp
+			</result>
+		</action>
+		<action name="SoftFileManger" class="funCluAction"
+			method="fileSoftManage">
+			<result name="success">
+				/customerService/funclub/File_manager.jsp
+			</result>
+		</action>
+		<action name="GameFileManger" class="funCluAction"
+			method="fileGameManage">
+			<result name="success">
+				/customerService/funclub/File_manager.jsp
+			</result>
+		</action>
+		<action name="SoftGameredirect" class="funCluAction"
+			method="softGameredirect">
+		</action>
+		<action name="Essentail" class="funCluAction"
+			method="essentail">
+			<result name="success">
+				/customerService/funclub/Essentail_manager.jsp
+			</result>
+		</action>
+		<action name="updateFileShowId" class="funCluAction"
+			method="updateFileShowId">
+			<result name="soft" type="redirect">/SoftFileManger</result>
+			<result name="game" type="redirect">/GameFileManger</result>
+			<result name="essential" type="redirect">/Essentail</result>
+		</action>
+		<action name="DeletFileW" class="funCluAction"
+			method="deleteFile">
+			<result name="soft" type="redirect">/SoftFileManger</result>
+			<result name="game" type="redirect">/GameFileManger</result>
+			<result name="essential" type="redirect">/Essentail</result>
+		</action>
+		<action name="updateFile" class="funCluAction"
+			method="updateFile">
+			<result name="soft" type="redirect">/SoftFileManger</result>
+			<result name="game" type="redirect">/GameFileManger</result>
+			<result name="essential" type="redirect">/Essentail</result>
+			<result name="Fail">
+				/customerService/funclub/FileInfo.jsp
+			</result>
+		</action>
+		<action name="goUpdate" class="funCluAction"
+			method="goUpdate">
+			<result name="Fail">
+				/customerService/funclub/CategoryInfo.jsp
+			</result>
+			<result name="success" type="redirect">
+				/categoryManage
+			</result>
+		</action>
+		<action name="DeletCate" class="funCluAction"
+			method="DeletCate">
+			<result name="success" type="redirect">
+				/categoryManage
+			</result>
+		</action>
+		<action name="toFunClub" class="funCluAction"
+			method="toFunclub">
+			<result name="">
+				/customerService/funclub/funclub.jsp
+			</result>
+		</action>
+		<action name="getFileList" class="funCluAction"
+			method="getFileListByCateId">
+			<result name="">
+				/customerService/funclub/FileList.jsp
+			</result>
+		</action>
+		<action name="getFileInfo" class="funCluAction"
+			method="getFileInfo">
+			<result name="">
+				/customerService/funclub/ListToInfo.jsp
+			</result>
+		</action>
+		<action name="addAdever" class="funCluAction"
+			method="addAdever">
+			<result name="Fail">
+				/customerService/funclub/addAdver.jsp
+			</result>
+			<result name="success" type="redirect">
+				/AdeverManager
+			</result>
+		</action>
+		<action name="AdeverManager" class="funCluAction"
+			method="adeverManager">
+			<result name="success">
+				/customerService/funclub/adverManager.jsp
+			</result>
+		</action>
+		<action name="DelAdver" class="funCluAction"
+			method="DelAdver">
+			<result name="success" type="redirect">
+				/AdeverManager
+			</result>
+		</action>
+		<action name="updateAdver" class="funCluAction"
+			method="updateAdver">
+			<result name="Fail">
+				/customerService/funclub/AdverInfo.jsp
+			</result>
+			<result name="success" type="redirect">
+				/AdeverManager
+			</result>
+		</action>
+		<!-- 
+		<action name="logo" class="loginAction" method="logo">
+			<result name="login">/index.jsp</result>
+			<result name="Fail">/login.jsp</result>
+		</action>
+		 -->
+		<action name="companyCount" class="funCluAction"
+			method="companyCount">
+			<result name="success">
+				/customerService/funclub/companyCount.jsp
+			</result>
+		</action>
+		<action name="getfuncommentsList" class="funCluAction"
+			method="getfuncommentsList">
+			<result name="success">
+				/customerService/funclub/getfuncommentsList.jsp
+			</result>
+		</action>
+		<action name="funcommentsdel" class="funCluAction"
+			method="funcommentsdel">
+			<result name="success">getfuncommentsList</result>
+		</action>
+		<action name="orzAppSta" class="funCluAction" method="orzAppSta">
+			<result name="success" >/customerService/funclub/orzAppSta.jsp</result>
+		</action>
+	</package>
+</struts>

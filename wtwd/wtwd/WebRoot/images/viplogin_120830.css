@@ -1,0 +1,405 @@
+body {
+	font: 12px/1.125 ËÎÌå, Arial, Helvetica, sans-serif; font-size-adjust: none; font-stretch: normal;
+}
+button {
+	font: 12px/1.125 ËÎÌå, Arial, Helvetica, sans-serif; font-size-adjust: none; font-stretch: normal;
+}
+input {
+	font: 12px/1.125 ËÎÌå, Arial, Helvetica, sans-serif; font-size-adjust: none; font-stretch: normal;
+}
+select {
+	font: 12px/1.125 ËÎÌå, Arial, Helvetica, sans-serif; font-size-adjust: none; font-stretch: normal;
+}
+textarea {
+	font: 12px/1.125 ËÎÌå, Arial, Helvetica, sans-serif; font-size-adjust: none; font-stretch: normal;
+}
+body {
+	margin: 0px; padding: 0px;
+}
+div {
+	margin: 0px; padding: 0px;
+}
+dl {
+	margin: 0px; padding: 0px;
+}
+dt {
+	margin: 0px; padding: 0px;
+}
+dd {
+	margin: 0px; padding: 0px;
+}
+ul {
+	margin: 0px; padding: 0px;
+}
+ol {
+	margin: 0px; padding: 0px;
+}
+li {
+	margin: 0px; padding: 0px;
+}
+h1 {
+	margin: 0px; padding: 0px;
+}
+h2 {
+	margin: 0px; padding: 0px;
+}
+h3 {
+	margin: 0px; padding: 0px;
+}
+h4 {
+	margin: 0px; padding: 0px;
+}
+h5 {
+	margin: 0px; padding: 0px;
+}
+h6 {
+	margin: 0px; padding: 0px;
+}
+pre {
+	margin: 0px; padding: 0px;
+}
+form {
+	margin: 0px; padding: 0px;
+}
+fieldset {
+	margin: 0px; padding: 0px;
+}
+input {
+	margin: 0px; padding: 0px;
+}
+p {
+	margin: 0px; padding: 0px;
+}
+blockquote {
+	margin: 0px; padding: 0px;
+}
+th {
+	margin: 0px; padding: 0px;
+}
+td {
+	margin: 0px; padding: 0px;
+}
+html {
+	background: rgb(56, 62, 67); height: 100%;
+}
+body {
+	background: rgb(56, 62, 67); height: 100%;
+}
+h1 {
+	font-size: 100%; font-weight: normal;
+}
+h2 {
+	font-size: 100%; font-weight: normal;
+}
+h3 {
+	font-size: 100%; font-weight: normal;
+}
+h4 {
+	font-size: 100%; font-weight: normal;
+}
+h5 {
+	font-size: 100%; font-weight: normal;
+}
+h6 {
+	font-size: 100%; font-weight: normal;
+}
+ol {
+	list-style: none;
+}
+ul {
+	list-style: none;
+}
+address {
+	font-weight: normal;
+}
+caption {
+	font-weight: normal;
+}
+cite {
+	font-weight: normal;
+}
+code {
+	font-weight: normal;
+}
+dfn {
+	font-weight: normal;
+}
+em {
+	font-weight: normal;
+}
+strong {
+	font-weight: normal;
+}
+th {
+	font-weight: normal;
+}
+var {
+	font-weight: normal;
+}
+table {
+	border-collapse: collapse; border-spacing: 0;
+}
+fieldset {
+	border: 0px currentColor;
+}
+img {
+	border: 0px currentColor;
+}
+caption {
+	text-align: left;
+}
+th {
+	text-align: left;
+}
+input {
+	
+}
+button {
+	
+}
+select {
+	
+}
+textarea {
+	
+}
+.clearfix {
+	zoom: 1;
+}
+.clearfix::after {
+	height: 0px; clear: both; font-size: 0px; display: block; visibility: hidden; content: ".";
+}
+a {
+	color: rgb(231, 231, 230); text-decoration: none;
+}
+a:hover {
+	color: rgb(255, 255, 255); text-decoration: none;
+}
+.viploginbg {
+	margin: 0px; padding: 0px; left: 0px; top: 0px; width: 100%; height: 100%; overflow: hidden; position: absolute;
+}
+.topbar {
+	background: url("../images/header_bg.png") repeat-x left top; width: 100%; height: 54px; position: relative; _background: #000;
+}
+.topmain {
+	margin: 0px auto; width: 950px; position: relative;
+}
+.topmain .logo {
+	padding: 8px 0px 0px; float: left;
+}
+.topmain .logo a {
+	background: url("../images/vip_logo.png") no-repeat; width: 160px; height: 36px; display: block; _background: url(../images/vip_logo.gif) no-repeat;
+}
+.topmain .rtop {
+	padding: 20px 0px 0px; height: 20px; color: rgb(160, 161, 160); line-height: 20px; float: right;
+}
+.topmain .rtop span.line {
+	margin: 0px 13px;
+}
+.topmain .rtop a.icon {
+	background: rgb(31, 135, 255); padding: 0px 10px; border-radius: 4px; height: 22px; color: rgb(255, 255, 255); line-height: 22px; display: inline-block;
+}
+.topmain .aniIn {
+	opacity: 1; -moz-transition: opacity .5s ease; -webkit-transition: opacity .5s ease-in; -o-transition: opacity .5s ease; transition: opacity .5s ease-in;
+}
+.topmain .aniOut {
+	opacity: 0; -moz-transition: opacity .5s ease; -webkit-transition: opacity .5s ease-in; -o-transition: opacity .5s ease; transition: opacity .5s ease-in;
+}
+.supportBox {
+	background: rgb(255, 255, 255); top: 55px; width: 279px; height: 150px; right: 0px; position: absolute; opacity: 0; box-shadow: 2px 2px 2px #919191;
+}
+.supportBox .arrowTop {
+	border-width: 0px 7px 7px; border-style: dashed dashed solid; border-color: transparent transparent rgb(255, 255, 255); top: -7px; width: 0px; height: 0px; right: 34px; line-height: 0; overflow: hidden; font-size: 0px; display: block; position: absolute;
+}
+.supportBox .supportCon {
+	background: rgb(255, 255, 255); padding: 13px 0px 0px 17px; width: 262px; height: 63px;
+}
+.supportBox .supportCon p {
+	height: 24px; line-height: 24px; overflow: hidden;
+}
+.supportBox .supportCon p .arrowLeft {
+	border-width: 4px 0px 4px 4px; border-style: dashed dashed dashed solid; border-color: transparent transparent transparent rgb(51, 51, 51); width: 0px; height: 0px; line-height: 0; overflow: hidden; font-size: 0px; margin-right: 4px; vertical-align: middle; display: inline-block;
+}
+.supportBox .supportCon p a {
+	color: rgb(31, 135, 255); font-family: Tahoma,Arial,sans-serif;
+}
+.supportBox .supportCon p b {
+	color: rgb(31, 135, 255); font-family: Tahoma,Arial,sans-serif;
+}
+.supportBox .supportList {
+	background: rgb(89, 89, 89); width: 262px; height: 73px; overflow: hidden; padding-left: 17px; border-top-color: rgb(67, 67, 67); border-top-width: 1px; border-top-style: solid;
+}
+.supportBox .supportList a {
+	margin: 14px 17px 0px 0px; width: 48px; text-align: center; color: rgb(221, 223, 227); display: inline-block;
+}
+.supportBox .supportList a b {
+	background: url("../images/he_ico.png") no-repeat; margin: 0px auto 7px; display: block;
+}
+.supportBox .supportList a.payGuide b {
+	width: 31px; height: 28px;
+}
+.supportBox .supportList a.getBill b {
+	background-position: -69px 0px; width: 28px; height: 28px;
+}
+.supportBox .supportList a.feedback b {
+	background-position: -127px 0px; width: 38px; height: 28px;
+}
+.supportBox .supportList a.helpCenter b {
+	background-position: -201px 0px; width: 26px; height: 28px;
+}
+.supportBox .supportList a.payGuide:hover b {
+	background-position: 0px -122px;
+}
+.supportBox .supportList a.getBill:hover b {
+	background-position: -69px -122px;
+}
+.supportBox .supportList a.feedback:hover b {
+	background-position: -127px -122px;
+}
+.supportBox .supportList a.helpCenter:hover b {
+	background-position: -201px -122px;
+}
+.supportBox .supportList a:hover {
+	color: rgb(31, 135, 255);
+}
+.bgHeight {
+	height: 100%; position: relative;
+}
+.loginBox {
+	margin: 0px auto; width: 300px; height: 340px; font-family: Tahoma,"Î¢ÈíÑÅºÚ","ËÎÌå";
+}
+.loginBox .vipMailbox {
+	width: 100%; overflow: hidden;
+}
+.loginBox .vipMailbox li {
+	padding: 0px 4px 6px 2px; width: 294px; overflow: hidden; position: relative;
+}
+.loginBox .vipMailbox li.mailname input {
+	background: url("../images/mailname1.png") no-repeat 7px rgb(255, 255, 255); border: 1px solid rgb(255, 255, 255); width: 158px; height: 39px; line-height: 39px; padding-left: 25px; font-family: Tahoma,"Î¢ÈíÑÅºÚ","ËÎÌå"; font-size: 14px; display: inline-block; box-shadow: 1px 1px 2px #7f807f; -webkit-box-shadow: 1px 1px 2px #7f807f; -moz-box-shadow: 1px 1px 2px #7f807f;
+}
+.loginBox .focus label {
+	color: rgb(204, 204, 204);
+}
+.loginBox .vipMailbox li.mailname span.vip {
+	background: rgb(255, 255, 255); width: 108px; height: 41px; text-align: center; line-height: 41px; font-size: 14px; border-left-color: rgb(232, 232, 232); border-left-width: 1px; border-left-style: solid; display: inline-block; box-shadow: 1px 1px 2px #7f807f; -webkit-box-shadow: 1px 1px 2px #7f807f; -moz-box-shadow: 1px 1px 2px #7f807f;
+}
+.loginBox .vipMailbox li.mailname .clearname {
+	background: url("../images/icon.gif") no-repeat 0px -200px; top: 17px; width: 9px; height: 9px; right: 122px; display: inline-block; position: absolute;
+}
+.loginBox .vipMailbox li.mailpass input {
+	background: url("../images/password1.png") no-repeat 7px rgb(255, 255, 255); border: 1px solid rgb(255, 255, 255); width: 267px; height: 39px; line-height: 39px; padding-left: 25px; font-family: Tahoma,"Î¢ÈíÑÅºÚ","ËÎÌå"; font-size: 14px; box-shadow: 1px 1px 2px #7f807f; -webkit-box-shadow: 1px 1px 2px #7f807f; -moz-box-shadow: 1px 1px 2px #7f807f;
+}
+.loginBox .vipMailbox li.checkcodeBox input {
+	background: rgb(255, 255, 255); border: 1px solid rgb(255, 255, 255); width: 175px; height: 39px; color: rgb(153, 153, 153); line-height: 39px; padding-left: 8px; font-family: Tahoma,"Î¢ÈíÑÅºÚ","ËÎÌå"; font-size: 14px; float: left; box-shadow: 1px 1px 2px #7f807f; -webkit-box-shadow: 1px 1px 2px #7f807f; -moz-box-shadow: 1px 1px 2px #7f807f;
+}
+.loginBox .vipMailbox li.checkcodeBox img {
+	border: 1px solid rgb(204, 208, 212); width: 97px; height: 40px; float: right; box-shadow: 1px 1px 2px #7f807f; -webkit-box-shadow: 1px 1px 2px #7f807f; -moz-box-shadow: 1px 1px 2px #7f807f;
+}
+.loginBox .vipMailbox li.set a {
+	color: rgb(255, 255, 255); float: right; _margin-top: 0;
+}
+.loginBox .vipMailbox li.set input {
+	margin-right: 3px; vertical-align: middle;
+}
+.loginBox .vipMailbox li.set label {
+	color: rgb(255, 255, 255); margin-right: 12px;
+}
+.loginBox .vipMailbox li.btn {
+	padding-top: 22px;
+}
+.loginBox .vipMailbox li.btn a {
+	width: 117px; height: 36px; text-align: center; color: rgb(255, 255, 255); line-height: 36px; font-size: 14px; font-weight: bold; float: left; display: block;
+}
+.loginBox .vipMailbox li.btn a.loginBtn {
+	background: url("../images/btn_login.png") repeat-x;
+}
+.loginBox .vipMailbox li.btn a.loginBtn:hover {
+	background: url("../images/btn_login2.png") repeat-x;
+}
+.loginBox .vipMailbox li.btn a.loginBtn:active {
+	background: url("../images/btn_login3.png") repeat-x;
+}
+.loginBox .vipMailbox li.btn a.loginBtnload {
+	background: url("../images/loginloading1.gif") no-repeat; text-indent: -9999em; overflow: hidden;
+}
+.loginBox .vipMailbox li.btn a.loginBtnload:hover {
+	background: url("../images/loginloading1.gif") no-repeat; text-indent: -9999em; overflow: hidden;
+}
+.loginBox .vipMailbox li.btn a.loginBtnload:active {
+	background: url("../images/loginloading1.gif") no-repeat; text-indent: -9999em; overflow: hidden;
+}
+.loginBox .vipMailbox li.btn a.register {
+	background: url("../images/btn_register.png") repeat-x; float: right;
+}
+.loginBox .vipMailbox li.btn a.register:hover {
+	background: url("../images/btn_register.png") repeat-x;
+}
+.loginBox .vipMailbox li.btn a.register:active {
+	background: url("../images/btn_register.png") repeat-x;
+}
+.loginBox .vipMailbox li.pay a {
+	background: url("../images/vip_pay.gif") no-repeat left; height: 18px; color: rgb(255, 255, 255); line-height: 18px; padding-left: 18px; display: inline-block;
+}
+.loginBox .vipMailbox li.set {
+	height: 20px; line-height: 20px; overflow: hidden;
+}
+.loginBox .loginError {
+	left: 0px; top: -2px; color: rgb(255, 64, 64); position: relative;
+}
+.loginBox .loginError1 {
+	top: 4px;
+}
+.loginBox .placeholder {
+	left: 30px; top: 0px; height: 41px; color: rgb(153, 153, 153); line-height: 41px; font-size: 15px; position: absolute; cursor: text;
+}
+.loginBox .placeholder1 {
+	left: 12px;
+}
+.loginBox li.safeTip {
+	padding: 4px 0px 2px 8px; border: 1px solid rgb(217, 204, 180); width: 286px; color: rgb(102, 102, 102); line-height: 18px; background-color: rgb(254, 254, 193);
+}
+.loginBox .checkcodeBox a {
+	color: rgb(255, 255, 255); float: right;
+}
+.loginBox .checkcodeBox p {
+	height: 20px; color: rgb(255, 255, 255); line-height: 20px;
+}
+.viplogin .mailLoginList li .focus input {
+	border: 1px solid rgb(255, 0, 0); box-shadow: inset 0px 0px 3px #f00;
+}
+.viplogin .mailLoginList li .hover input {
+	border: 1px solid rgb(255, 0, 0); box-shadow: inset 0px 0px 3px #f00;
+}
+.loginBox .error {
+	background: rgb(255, 242, 131); margin: 0px auto 16px; padding: 10px 12px; border-radius: 4px; width: 276px; color: rgb(93, 63, 21); line-height: 20px; font-weight: 700; position: relative; word-break: break-all; word-wrap: break-word;
+}
+.error {
+	background: rgb(255, 242, 131); padding: 10px 12px; border-radius: 4px; left: 50%; top: 54px; width: 926px; text-align: center; color: rgb(93, 63, 21); line-height: 20px; font-weight: 700; margin-left: -474px; position: absolute; word-break: break-all; word-wrap: break-word;
+}
+.vipfooter {
+	margin: 0px auto; width: 950px; color: rgb(231, 231, 230); overflow: hidden; position: relative;
+}
+.vipfooter .loginFooter {
+	padding: 0px; width: 100%; overflow: hidden; border-bottom-color: rgb(148, 147, 150); border-bottom-width: 1px; border-bottom-style: solid;
+}
+.vipfooter .loginFooter a.black {
+	color: rgb(231, 231, 230); float: right;
+}
+.vipfooter .loginFooter ul {
+	height: 20px; line-height: 20px; float: left;
+}
+.vipfooter .loginFooter li {
+	background: url("../images/foot_icon.png") no-repeat left; padding: 0px 20px 0px 10px; float: left;
+}
+.vipfooter .footenter {
+	padding: 8px 0px 10px; width: 100%; line-height: 20px; overflow: hidden;
+}
+.vipfooter .footenter .copyRight {
+	float: left;
+}
+.vipfooter .footenter .nav {
+	float: right;
+}
+.vipfooter .footenter .nav a {
+	margin: 0px 8px;
+}

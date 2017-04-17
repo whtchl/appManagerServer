@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+	<bean id="propertyConfigurer"  
+	    class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">  
+	    <property name="location" value="classpath:jdbc.properties" />
+	</bean>
+
+	<!-- 配置数据源 -->
+	<!-- 数据源 -->  
+    <bean id="product_dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">    
+    	<property name="driverClass" value="${dataSource.driver}" />    
+   		<property name="jdbcUrl" value="${dataSource.url}" />
+    	<property name="user" value="${dataSource.username}" />    
+    	<property name="password" value="${dataSource.password}" /> 
+    	
+    	 <!--<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/huitouke_v41?autoReconnect=true&amp;useUnicode=true&amp;characterEncoding=utf-8&amp;mysqlEncoding=utf8&amp;zeroDateTimeBehavior=convertToNull" />
+    	 <property name="user" value="huitouke_v41" />    
+    	 <property name="password" value="KDJl8W@^KG8l" />  -->  
+    	
+<!--    	连接池中保留的最小连接数。     -->
+    	<property name="minPoolSize" value="5" />
+    	<property name="maxPoolSize" value="20" />
+<!--    	最大空闲时间,60秒内未使用则连接被丢弃。若为0则永不丢弃。Default: 0 -->
+    	<property name="maxIdleTime" value="60" />  
+<!--    	当连接池中的连接耗尽的时候c3p0一次同时获取的连接数。Default: 3 -->
+    	<property name="acquireIncrement" value="5" />  
+    	<property name="maxStatements" value="0" />
+<!--    	初始化时获取的连接数，取值应在minPoolSize与maxPoolSize之间。Default: 3  -->
+    	<property name="initialPoolSize" value="10" />  
+<!--    	c3p0自动建立表c3p0Test测试连接的有效性  -->
+     	<property name="automaticTestTable" value="c3p0Test" />
+<!--     	每60秒检查所有连接池中的空闲连接。Default: 0  -->
+    	<property name="idleConnectionTestPeriod" value="60" />
+<!--    	定义在从数据库获取新连接失败后重复尝试的次数。Default: 30  -->
+    	<property name="acquireRetryAttempts" value="30" />
+<!--    	因性能消耗大请只在需要的时候使用它。如果设为true那么在每个connection提交的时候都将校验其有效性。-->
+<!--    	建议使用idleConnectionTestPeriod或automaticTestTable等方法来提升连接测试的性能。Default: false  -->
+    	<property name="testConnectionOnCheckout" value="false" />     
+	</bean>
+
+
+	<bean id="jdbcTemplate"
+		class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="product_dataSource"></property>
+	</bean>
+
+
+	<!-- 配置DAO -->
+	
+	<bean id="userDao" class="com.cncoman.product.dao.UsersDAO">
+		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+	</bean>
+	
+	<bean id="companyDao" class="com.cncoman.product.dao.CompanyDAO">
+		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+	</bean>
+	
+	<bean id="resourceDao"
+		class="com.cncoman.product.dao.ResourceDAO">
+		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+	</bean>
+	
+	
+	
+	<bean id="versionServiceAdvDao"
+		class="com.cncoman.product.dao.VersionDAO">
+		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+	</bean>
+	<bean id="versionManageServiceDao"
+		class="com.cncoman.product.dao.VersionManageDAO">
+		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+	</bean>
+	
+	
+	<!-- 配置业务 -->
+	
+	<bean id="userService"
+		class="com.cncoman.product.biz.impl.UserServiceImpl">
+		<property name="dao" ref="userDao"></property>
+	</bean>
+	
+	<bean id="companyService"
+		class="com.cncoman.product.biz.impl.CompanyServiceImpl">
+		<property name="dao" ref="companyDao"></property>
+	</bean>
+	
+	<bean id="resourceService"
+		class="com.cncoman.product.biz.impl.ResourceServiceImpl">
+		<property name="dao" ref="resourceDao"></property>
+	</bean>
+	
+	
+	
+	<bean id="versionService"
+		class="com.cncoman.product.biz.impl.VersionServiceImpl">
+		<property name="versiondao" ref="versionServiceAdvDao"></property>
+	</bean>
+	<bean id="versionManageService"
+		class="com.cncoman.product.biz.impl.VersionManageServiceImpl">
+		<property name="versdao" ref="versionManageServiceDao"></property>
+	</bean>
+
+	
+
+	<!-- 配置action -->
+	<bean id="baseAction"
+		class="com.cncoman.product.action.BaseAction">
+		
+<property name="userService" ref="userService"></property>
+<property name="resourceService" ref="resourceService"></property>
+       <property name="versionService" ref="versionService"></property>
+		<property name="versionManageService"
+			ref="versionManageService"></property>
+	<property name="companyService" ref="companyService"></property>
+	
+	</bean>
+
+
+	<bean id="loginAction"
+		class="com.cncoman.product.action.LoginAction" scope="request"
+		parent="baseAction">
+	</bean>
+
+	<bean id="companyAction"
+		class="com.cncoman.product.action.CompanyAction" scope="prototype"
+		parent="baseAction">
+	</bean>
+	
+
+	<!-- 初始化数据到内存中 -->
+	
+	<bean id="initClass" class="com.cncoman.product.util.Initialize"
+		init-method="contextInitialized">
+		
+		<property name="companyService" ref="companyService"></property>
+		
+	</bean>
+ <import resource="../spring/funclub.xml" />
+ <import resource="../spring/version.xml" />
+ <import resource="../spring/admin.xml" />
+</beans>

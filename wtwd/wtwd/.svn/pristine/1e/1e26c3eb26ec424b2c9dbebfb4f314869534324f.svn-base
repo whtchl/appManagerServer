@@ -1,0 +1,206 @@
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	 "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<include file="struts-default.xml"></include>
+	<package name="struts" extends="struts-default" namespace="/">	
+		<interceptors>
+			<interceptor name="checkLogin" class="com.cncoman.product.filter.SecurityInterceptor"></interceptor>
+			<interceptor-stack name="myStack">
+				<interceptor-ref name="defaultStack" />
+				<interceptor-ref name="checkLogin" />				
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="myStack" />
+		<global-results>
+			<result name="login">/system/needLogon.html</result>
+			<result name="error">/index.jsp</result>
+			<result name="url">${url}</result>
+			<result name="frequentClick">/system/frequentClick.html</result>
+		</global-results>
+		<!-- 备用域名 -->
+		<action name="toUpdateBakUrl" class="csResManageAction" method="toUpdateBakUrl">
+			<result name="success" >/customerService/updateBakUrl.jsp</result>
+		</action>
+		<action name="updateBakUrl" class="csResManageAction" method="updateBakUrl">
+			<result name="success"  type="redirect">/bakUrl</result>
+		</action>
+		<action name="deleteBakUrl" class="csResManageAction" method="deleteBakUrl">
+			<result name="success"  type="redirect">/bakUrl</result>
+		</action>
+		<action name="addBakUrl" class="csResManageAction" method="addBakUrl">
+			<result name="input" >/customerService/addBakUrl.jsp</result>
+			<result name="success"  type="redirect">/bakUrl</result>
+		</action>
+		<action name="bakUrl" class="csResManageAction" method="bakUrl">
+			<result name="success" >/customerService/bakUrl.jsp</result>
+		</action>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	   
+		
+		
+		<!-- 公司 -->
+		<action name="updateMachAdOpen" class="companyAction" method="updateMachAdOpen">
+			<result name="success">/machAdOpen</result>			
+		</action>
+		<action name="machAdOpen" class="companyAction" method="machAdOpen">
+			<result name="success">/company/machineAdOpen.jsp</result>			
+		</action>
+		<action name="companyList" class="companyAction" method="list">
+			<result name="list">/company/list.jsp</result>			
+		</action>
+		<action name="createCompany" class="companyAction" method="toAdd">
+			<result name="add">/company/company.jsp</result>			
+		</action>
+		<action name="saveCompany" class="companyAction" method="save">
+			<result name="list">/companyList</result>
+			<result name="toAdd">/createCompany</result>			
+		</action>
+		<action name="updateCompany" class="companyAction" method="update">
+			<result name="list">/companyList</result>
+			<result name="toUpdate">/toUpdateCompany</result>			
+		</action>
+		<action name="createMachine" class="companyAction" method="addMachine">
+			<result name="machine">/company/machine.jsp</result>			
+		</action>
+		<action name="saveMachine" class="companyAction" method="saveMachine">
+			<result name="list" type="redirect">/machineList</result>			
+		</action>
+		<action name="machineList" class="companyAction" method="machineList">
+			<result name="machineList">/company/machineList.jsp</result>			
+		</action>
+		<action name="toUpdateMachine" class="companyAction" method="toUpdateMachine">
+			<result name="updateMachine">/company/updateMachine.jsp</result>			
+		</action>
+		<action name="updateMachine" class="companyAction" method="updateMachine">
+			<result name="list" type="redirect">/machineList</result>			
+		</action>
+		<action name="listMacProd" class="companyAction" method="listMacProd">
+			<result name="listMacProd">/company/machineProdExplain.jsp</result>			
+		</action>
+		<action name="macProd" class="companyAction" method="macProd">
+			<result name="success">/company/machineProStatus.jsp</result>			
+		</action>
+		<action name="updatemacProd" class="companyAction" method="updatemacProd">
+			<result name="success">listMacProd</result>			
+		</action>
+		<action name="updateMacProd" class="companyAction" method="updateMacProd">
+			<result name="list">/listMacProd</result>			
+		</action>
+		<action name="toUpdateCompany" class="companyAction" method="toUpdate">
+			<result name="update">/company/updateCompany.jsp</result>			
+		</action>
+		<action name="profitManager" class="companyAction" method="profitManager">
+			<result name="profitManager">/company/profit.jsp</result>
+		</action>
+		<action name="updateProfit" class="companyAction" method="updateProfit">
+			<result name="profitManager">/profitManager</result>
+		</action>
+		<action name="brandManager" class="companyAction" method="BrandManager">
+			<result name="brandManager">/company/brandManager.jsp</result>
+		</action>		
+		<action name="saveBrand" class="companyAction" method="saveBrand"></action>
+		<action name="updateBrand" class="companyAction" method="updateBrand"></action>
+		<action name="deleteBrand" class="companyAction" method="deleteBrand">
+			<result name="brandManager">/brandManager</result>
+		</action>		
+		<action name="toUpdateBrand" class="companyAction" method="toUpdateBrand">
+			<result name="updateBrand">/company/updateBrand.jsp</result>
+		</action>		
+		<action name="updateMachineBrand" class="companyAction" method="updateMachineBrand">
+			<result name="brandManager">/brandManager</result>
+		</action>		
+		<action name="toCreateBrand" class="companyAction" method="toCreateBrand">
+			<result name="createBrand">/company/createBrand.jsp</result>
+		</action>	
+		<!-- 新版机型品牌管理 -->
+		<action name="BrandTree" class="companyAction" method="BrandTree"></action>
+		<!-- 新版机型归类到品牌 -->
+		<action name="classify" class="companyAction" method="classifyMachineToBrand"></action>
+		
+		
+		
+		
+		
+		
+	    
+		<!-- osm版本管理 -->
+	
+		<action name="saddVersion" class="customerServiceAction" method="saddversion">
+			<result name="success">/customerService/saddVersion.jsp</result>
+			<result name="input">/customerService/saddVersion.jsp</result>
+		</action>
+		<action name="sversionManage" class="customerServiceAction" method="sversionManage">
+			<result name="success">/customerService/sversionManage.jsp</result>
+		</action>
+		<action name="ssaveVersionInfo" class="customerServiceAction" method="ssaveVersionInfo">
+			<result name="success" type="redirect" >/sversionManage</result>
+		</action>
+		<action name="supdateVersion" class="customerServiceAction" method="supdateVersion">
+			<result name="success" type="redirect" >/sversionManage</result>
+		</action>
+		<action name="sversion" class="customerServiceAction" method="sversion">
+			<result name="success">/customerService/sverInfoManage.jsp</result>
+		</action>
+		<action name="saddVerInfo" class="customerServiceAction" method="saddVerInfo">
+			<result name="success" type="redirect">/sversion</result>
+		</action>
+		<action name="sgetVerInfo" class="customerServiceAction" method="sgetVerInfo">
+			<result name="success">/customerService/sgetVerInfo.jsp</result>
+			<result name="input">/customerService/sgetVerInfo.jsp</result>
+		</action>
+		<action name="supdateVerInfo" class="customerServiceAction" method="supdateVerInfo">
+			<result name="success">/sversion</result>
+			<result name="input">/sversion</result>
+		</action>
+		<action name="sdeleteVersion" class="customerServiceAction" method="sdeleteVersion">
+			<result name="success">/sversionManage</result>
+			<result name="input">/sversionManage</result>
+		</action>
+		
+		<action name="opinionList" class="customerServiceAction" method="opinionList">
+			<result name="opinionList">/customerService/opinionList.jsp</result>
+		</action>
+		
+		
+		
+	</package>
+	
+	<!-- 无需登陆验证功能及接口 -->
+	<package name="login_package" extends="struts-default" namespace="/">
+		<action name="logon" class="loginAction" method="dologon">
+			<result name="OK">/system/welcome.jsp</result>
+			<result name="FAIL">/login.jsp</result>
+			<result name="input">/login.jsp</result>
+		</action>
+		<action name="logout" class="loginAction" method="logout">
+		</action>
+		<!-- 验证码 -->
+		<action name="vcs" class="com.cncoman.product.servlet.ValidateCodeServlet" method="service"></action>
+		
+		
+		
+	</package>
+	
+	<include file="/struts/funclub.xml"></include>
+	<include file="/struts/admin.xml"></include>
+	<include file="/struts/version.xml"></include>
+	<!-- 这个改变struts2标签默认的样式 -->
+	
+	<constant name="struts.ui.theme" value="simple"/>
+	<constant name="struts.serve.static" value="false" />
+	<constant name="struts.ui.templateDir" value="struts" />
+	<constant name="struts.serve.static.browserCache" value="false"></constant>
+	<constant name="struts.multipart.maxSize" value="50000000"></constant>
+	<!--<constant name="struts.configuration.xml.reload" value="true"/> -->
+	<!-- <constant name="struts.multipart.saveDir" value="d:\\temp"></constant> -->
+	 
+	
+</struts>

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="holpestsores" default="compile" basedir=".">
+	<property name="pass2" value="cloudssky14"></property>
+
+<property name="data.dir" value="E:/workspace/wtwd/WebRoot/WEB-INF/classes" />
+	<target name="wtwd.jar" >
+		<delete file="E:/jar/wtwd.jar"/>
+		<delete file="E:/jar/wtwd.war"/>
+		<jar jarfile="E:/jar/wtwd.jar"  >
+			
+			<fileset dir="${data.dir}">
+				<include name="**/*.class"/>
+				
+			</fileset>
+		</jar>
+		
+		<war destfile="E:/jar/wtwd.war" webxml="E:/workspace/wtwd/WebRoot/WEB-INF/web.xml">
+		   <fileset dir="E:/workspace/wtwd/WebRoot" >
+		   	
+			        <include name="**/*.*"/>
+			        <exclude name="**/big_image/*.*"/>
+			        <exclude name="**/uploadimage/*.*"/>
+		   	        
+		   	</fileset>
+			
+		   <lib dir="E:/workspace/wtwdapi/WebRoot/WEB-INF/lib"/>
+		 <!--  <classes dir="E:/workspace/qing/WebRoot/WEB-INF/classes"></classes>  -->
+			
+			
+		
+		</war>
+		  
+		 
+		
+		<exec executable="cmd.exe">					
+							<arg value="/c"/>
+							<arg value="start"/>
+							<arg value="E:\jar"/>
+			    </exec>
+	</target>
+	
+	
+	
+	
+	
+	
+	<target name="compile" description="Compile Java sources" >
+			<!--depends="clean" 
+			<mkdir dir="${class.dir}"/>
+			<javac srcdir="${src.dir}"                 destdir="${class.dir}">
+				<classpath refid="compile.classpath"/>
+			</javac> -->
+
+			<javac srcdir="${src.dir}" destdir="E:\Tomcat5.0\webapps\holpestore\WEB-INF\classes" encoding="utf-8">
+				<classpath refid="master.classpath" />
+			</javac>
+			<!--
+			<copy  todir="${class.dir}">
+				<fileset dir="${src.dir}" excludes="**/*.java"/>
+			</copy>-->
+		</target>
+	
+
+	
+	<typedef resource="org/tigris/subversion/svnant/svnantlib.xml" />  
+	
+<!--
+	<property name="work.space" value="E:/jar/qing/" />
+	<property name="urlRepos" value="svn://113.106.88.147:3690/qing/WebRoot" />
+	<svnSetting svnkit="true" javahl="false" id="svn.settings" />
+	<target name="svn" >
+		
+	        <svn username="yubon123" password="yubon!@#" javahl="false" >
+	       
+	        	<commit dir="${work.space}" message="up"  />
+	        </svn>
+	    </target>
+	
+	-->
+	
+	
+
+
+    
+	
+    <property name="basedir" value="C:/Program Files/MyEclipse 6.5/lib"></property>
+    <path id="path.svnant">   <!-- 定义一个PATH元素,告诉ANT 到哪找SVNANT的类库 -->
+          <pathelement location="${basedir}/svnant.jar"/>  <!-- SVNANT顶层包-->
+          <pathelement location="${basedir}/svnClientAdapter.jar"/> <!-- SVNANT 与SVN通讯的适配器包-->          
+          <pathelement location="${basedir}/svnjavahl.jar"/> <!-- SVNANT与SVN 通讯的JAVA BRIDGE包-->        
+          <!-- ... -->
+    </path>
+   
+    <typedef
+          resource="org/tigris/subversion/svnant/svnantlib.xml"
+          classpathref="path.svnant"
+      />  <!--引用 svnantlib.xml ，其中定义了ANT的SVN命令，见下方详解。--> 
+ 
+	<svnSetting id="svn.settings" svnkit="true"  
+	          javahl="false"
+	          username="yubon123"
+	          password="yubon!@#"
+	      />
+
+   
+	
+
+	
+		
+	
+	<!-- ssssssssssssss-->
+	
+	
+	   
+	  <!--
+	    <svnSetting id="svn.settings"
+	       svnkit="false"
+	       javahl="trues"
+	       username="yubon123"
+	       password="yubon!@#"
+	    />
+	 -->
+
+	
+	
+	
+	<target name="109wtwdssh-qing-exec"> 
+			
+			
+			<sshexec host="111.1.41.109" username="root"  password="${pass2}"  
+						         trust="true" command="cd /usr/local/web/;unzip -o wtwd.war -d wtwd/"/> 
+					 <sleep seconds="5"/> 
+			<sshexec host="111.1.41.109" username="root"  password="${pass2}"  
+				         trust="true" command="/usr/local/setup/apache-tomcat-6.0.29/bin/shutdown.sh"/> 
+			 <sleep seconds="5"/>  
+		      <sshexec host="111.1.41.109" username="root"  password="${pass2}"  
+		         trust="true" command="/usr/local/setup/apache-tomcat-6.0.29/bin/startup.sh"/>  
+		</target>
+	<target name="rename109">
+					<sshexec host="111.1.41.109" username="root"  password="${pass2}"  
+										         trust="true" command="cd /usr/local/web/;mv wtwd.war.temp wtwd.war${deploy.time}.bak;mv wtwd.war wtwd.war.temp"/> 
+				</target>
+	<target name="rename109test">
+						<sshexec host="111.1.41.109" username="root"  password="${pass2}"  
+											         trust="true" command="which java"/> 
+					</target>
+	
+</project>

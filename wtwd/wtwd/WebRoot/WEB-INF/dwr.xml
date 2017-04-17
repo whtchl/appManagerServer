@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dwr PUBLIC "-//GetAhead Limited//DTD Direct Web Remoting 1.0//EN" "http://directwebremoting.org/schema/dwr20.dtd">
+<dwr>
+	<allow>
+		<create javascript="JMobileSalesService" creator="spring">
+			<param name="beanName" value="userAction"></param>
+			<include method="validIdentity" />
+		</create>
+		<create javascript="JfrequentClickService" creator="new">
+			<param name="class"
+				value="com.cncoman.service.util.StringUtil">
+			</param>
+			<include method="frequentClick" />
+		</create>
+		<create javascript="JDWRService" creator="spring">
+			<param name="beanName" value="dwrService"></param>
+			<include method="changePortMobile" />
+			<include method="startSend" />
+			<include method="stopSend" />
+		</create>
+		<create javascript="getdwrShopcommodity" creator="spring">			
+			<param name="beanName" value="dwrShopCommodity"></param>
+			<include method="getContext"/>
+		</create>
+	</allow>
+</dwr>

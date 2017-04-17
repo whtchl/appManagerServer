@@ -1,0 +1,39 @@
+@charset "utf-8";
+body,button,input,select,textarea{font:12px/1.125 宋体,Arial,Helvetica,sans-serif;}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,p,blockquote,th,td{margin:0;padding:0;}
+html,body{height:100%;background:#fff;}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}
+ol,ul{list-style:none;}
+address,caption,cite,code,dfn,em,strong,th,var{font-size:normal;font-weight:normal;}
+table{border-collapse:collapse;border-spacing:0;}
+fieldset,img{border:0;}
+caption,th{text-align:left;}
+input,button,select,textarea{outline:none;}
+.clearfix{zoom:1;}
+#logon_center{width:1000px; margin:0 auto;}
+.clearfix:after{content:".";display:block;height:0;font-size:0;clear:both;visibility:hidden;}
+#logon_left{ background:url(../images/logon_left.jpg) center center; width:630px; float:left; height:505px;}
+a{text-decoration:none;color:#e7e7e6;}
+a:hover{text-decoration:none;color:#fff;}
+.viploginbg{width:100%;height:100%;padding:0;margin:0;position:absolute;left:-6px;top:0px;overflow:hidden; background:#FFF}
+.topbar{height:70px; padding:15px 0 0;width:100%; clear:both;background:#1f5088;}
+.topmain{width:950px;margin:0 auto;}
+.topmain .logo{float:left;padding:8px 0 0;}
+.topmain .logo img{}
+.topmain .logo a{display:block;width:286px;height:36px;background:url(../images/logo.png) no-repeat;_background:url(../images/vip_logo.gif) no-repeat;}
+.topmain .rtop{float:right;height:20px;line-height:20px;padding:20px 0 0;color:#a0a1a0;}
+.topmain .rtop span.line{margin:0 13px;}
+.topmain .rtop a.icon{display:inline-block;background:#1f87ff;padding:0 10px;height:22px;line-height:22px;border-radius:4px;color:#fff;}
+.topmain .aniIn{-moz-transition:opacity .5s ease;-webkit-transition:opacity .5s ease-in;-o-transition:opacity .5s ease;transition:opacity .5s ease-in;opacity:1;}
+.topmain .aniOut{-moz-transition:opacity .5s ease;-webkit-transition:opacity .5s ease-in;-o-transition:opacity .5s ease;transition:opacity .5s ease-in;opacity:0;}
+
+#logon_foot{margin-top:500px; color:#b4b7b7; font-size:13px; font-family:"微软雅黑"; line-height:40px; border-top:solid #e5e6e6 1px; text-align:center}
+#loginBox{width:290px; padding:60px 30px 60px; background:#1f5088;float:right;}
+#vipname{background:url(../images/mailname1.png) #fff no-repeat 5px 12px; height:40px; padding-left:30px; border:solid #d7d7d7 1px; display:block; width:90%; line-height:40px; vertical-align:text-top;  font-size:16px; color:#838282; font-family:"微软雅黑"  }
+#vippassword{background:url(../images/password1.png) #fff no-repeat 5px 12px; height:40px; padding-left:30px; border:solid #d7d7d7 1px; display:block; width:90%; line-height:40px; font-size:16px; color:#838282 ; font-family:"微软雅黑" ; margin-top:30px; vertical-align:text-top; }
+#TxtValidateCode{background:#fff; height:40px; padding-left:10px; border:solid #d7d7d7 1px;width:175px; line-height:40px; font-size:16px; color:#838282 ; font-family:"微软雅黑" ; margin-top:30px; }
+#VcodeLogin{text-align:right; margin-top:-43px;}
+#VcodeLogin img{width:97px;  height:42px; vertical-align:middle;}
+.clearfix{display:block; padding:0px; margin:0px; text-align:right; line-height:25px; padding-right:10px;}
+.btn{line-height:40px; background:#3475c1; display:block;  border-top:solid 1px #4d88cc;; margin-top:20px; text-align:center; font-size:16px; font-weight:bold; font-family:"微软雅黑"; color:#FFF}
+.btn:hover{background:#3285da;}

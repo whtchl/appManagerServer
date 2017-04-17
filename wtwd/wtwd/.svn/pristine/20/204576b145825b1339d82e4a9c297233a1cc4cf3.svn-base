@@ -1,0 +1,28 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0041)http://localhost/bbs/Admin/main_index.asp -->
+<HTML><HEAD><TITLE>data123管理页面</TITLE>
+<META http-equiv=content-type content="text/html; charset=UTF-8"><LINK 
+href="images/main.css" type=text/css rel=stylesheet>
+<style type="text/css">
+<!--
+.STYLE1 {font-weight: bold}
+.STYLE11 {color: #FF0000}
+-->
+</style>
+<META content="MSHTML 6.00.2900.3268" name="GENERATOR">
+</HEAD>
+<BODY>
+<TABLE width="100%" height="505" border="0" align="center" cellpadding="3" cellspacing="1">
+  <TBODY>
+    <TR>
+      <TD width="50%" height=50 valign="middle" class="td_title" style="TEXT-ALIGN: center"><TABLE width="47%" height="155" border="0" align="center" cellpadding="3" cellspacing="1">
+          <TBODY>
+            <TR>
+              <TD height=155 class="td_title" style="TEXT-ALIGN: center"><img src="images/logoin.jpg"/>　</TD>
+            </TR>
+          </TBODY>
+      </TABLE></TD>
+    </TR>
+  </TBODY>
+</TABLE>
+</BODY></HTML>

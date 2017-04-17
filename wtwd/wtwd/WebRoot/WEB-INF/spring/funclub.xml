@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+	<!-- 配置数据源 -->
+	<bean id="funClubDao" class="com.cncoman.product.dao.FunClubDAO">
+		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+	</bean>
+	
+	
+    <bean id="funClubService"
+		class="com.cncoman.product.biz.impl.FunClubServiceImpl">
+		<property name="dao" ref="funClubDao"></property>
+	</bean>
+	
+	
+	<bean id="FunBaseAction"
+		class="com.cncoman.product.action.FunBaseAction">
+		<property name="funClubService" ref="funClubService"></property>
+
+	</bean>
+
+
+	<bean id="funCluAction"
+		class="com.cncoman.product.action.FunClubAction" scope="prototype"
+		parent="FunBaseAction">
+	</bean>
+	
+</beans>

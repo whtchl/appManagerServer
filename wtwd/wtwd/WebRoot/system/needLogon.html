@@ -1,0 +1,28 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META http-equiv=content-type content="text/html; charset=UTF-8">	
+	<TITLE>CNCOMAN&bull;中科脉信息管理平台</TITLE>	
+</HEAD>
+	<body>	
+		您可能长时间未操作，系统<span id="totalSecond">5</span>秒后将自动退出，或点击<a href="/" target="_top">此处</a>重新登录。
+	</body>
+	<SCRIPT type=text/javascript>
+	<!--
+	 	var totalSecond = document.getElementById("totalSecond");	 	
+		var second = totalSecond.innerText;
+		
+		setInterval("redirect()", 1000);
+		function redirect(){
+			var curSecond = --second;
+			if(curSecond >= 0){
+				totalSecond.innerText = curSecond;   
+			}
+			if(second < 0){
+				window.parent.location.href = "/";
+			}
+		}
+	
+	//-->
+	</SCRIPT>
+</HTML>

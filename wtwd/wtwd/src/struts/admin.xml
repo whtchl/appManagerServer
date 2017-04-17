@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <package name="struts3" extends="struts-default" namespace="/">
+		<interceptors>
+			<interceptor name="checkLogin" class="com.cncoman.product.filter.SecurityInterceptor"></interceptor>
+			<interceptor-stack name="myStack">
+				<interceptor-ref name="defaultStack" />
+				<interceptor-ref name="checkLogin" />				
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="myStack" />
+		<global-results>
+			<result name="login">/system/needLogon.html</result>
+			<result name="error">/index.jsp</result>
+			<result name="url">${url}</result>
+			<result name="frequentClick">/system/frequentClick.html</result>
+		</global-results>
+
+		<!--  -->
+		<!-- 用户 -->
+		
+		<action name="userList" class="userAction" method="list">
+			<result name="userList">/system/userList.jsp</result>
+		</action>
+		<action name="createUser" class="userAction" method="toAdd">
+			<result name="add">/system/addUser.jsp</result>
+		</action>
+		<action name="saveUser" class="userAction" method="save">
+			<result name="list">/userList</result>
+		</action>
+		<action name="toUpdateUser" class="userAction" method="toUpdate">
+			<result name="update">/system/updateUser.jsp</result>
+		</action>
+		<action name="updateUser" class="userAction" method="update">
+			<result name="list">/userList</result>
+		</action>
+		<action name="roleList" class="userAction" method="roleList">
+			<result name="roleList">/system/roleList.jsp</result>
+		</action>
+		<action name="toUpdateRole" class="userAction" method="toUpdateRole">
+			<result name="toUpdateRole">/system/purview.jsp</result>
+		</action>
+		<action name="updateRole" class="userAction" method="updateRole">
+			<result name="list">/roleList</result>
+			<result name="toUpdateRole">/toUpdateRole</result>
+		</action>
+		<action name="toChangePwd" class="userAction" method="toChangePwd">
+			<result name="changePwd">/system/changePwd.jsp</result>
+		</action>
+		<action name="changePwd" class="userAction" method="changePwd">
+			<result name="changePwd">/system/changePwd.jsp</result>
+		</action>
+		<action name="saveRole" class="userAction" method="createRole">
+			<result name="list">/roleList</result>
+			<result name="createRole">/createRole</result>
+		</action>
+		<action name="deleteRole" class="userAction" method="delRole">
+			<result name="list">/roleList</result>			
+		</action>
+		<action name="createRole" class="userAction" method="roleForm">															
+			<result name="createRole">/system/createRole.jsp</result>
+		</action>
+		<action name="createAgent" class="userAction" method="createAgent">															
+			<result name="createAgent">/system/createAgent.jsp</result>
+		</action>
+		<action name="agentList" class="userAction" method="agentList">
+			<result name="agentList">/system/agentList.jsp</result>
+		</action>
+		<action name="saveAgent" class="userAction" method="saveAgent">
+			<result name="agentList">/agentList</result>
+			<result name="createAgent">/createAgent</result>
+		</action>
+		<action name="deleteAgent" class="userAction" method="delAgent">
+			<result name="agentList">/agentList</result>			
+		</action>
+		<action name="toUpdateAgent" class="userAction" method="toUpdateAgent">
+			<result name="updateAgent">/system/updateAgent.jsp</result>
+		</action>
+		<action name="updateAgent" class="userAction" method="updateAgent">
+			<result name="agentList">/agentList</result>
+			<result name="createAgent">/createAgent</result>
+		</action>
+		<action name="createResource" class="userAction" method="createResource">
+			<result name="createResource">/system/createResource.jsp</result>
+		</action>
+		<action name="saveResource" class="userAction" method="saveResource"></action>
+		<action name="resourceList" class="userAction" method="resourceList">
+			<result name="resourceList">/system/resourceList.jsp</result>
+		</action>
+		<action name="toUpdateResource" class="userAction" method="toUpdateResource">
+			<result name="updateResource">/system/updateResource.jsp</result>
+		</action>
+		<action name="updateResource" class="userAction" method="updateResource">
+			<result name="resourceList">/resourceList</result>
+		</action>
+	</package>
+</struts>

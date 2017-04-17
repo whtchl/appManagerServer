@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <package name="struts4" extends="struts-default" namespace="/">
+		<interceptors>
+			<interceptor name="checkLogin" class="com.cncoman.product.filter.SecurityInterceptor"></interceptor>
+			<interceptor-stack name="myStack">
+				<interceptor-ref name="defaultStack" />
+				<interceptor-ref name="checkLogin" />				
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="myStack" />
+		<global-results>
+			<result name="login">/system/needLogon.html</result>
+			<result name="error">/index.jsp</result>
+			<result name="url">${url}</result>
+			<result name="frequentClick">/system/frequentClick.html</result>
+		</global-results>
+
+		<!--  -->
+		<!--版本管理 -->
+		<action name="addVersion" class="customerServiceAction" method="addversion">
+			<result name="success">/customerService/addVersion.jsp</result>
+			<result name="input">/customerService/addVersion.jsp</result>
+		</action>
+		<action name="versionManage" class="customerServiceAction" method="versionManage">
+			<result name="success">/customerService/versionManage.jsp</result>
+		</action>
+		<action name="saveVersionInfo" class="customerServiceAction" method="saveVersionInfo">
+			<result name="success" type="redirect" >/versionManage</result>
+			<result name="input">/addVersion</result>
+		</action>
+		<action name="updateVersion" class="customerServiceAction" method="updateVersion">
+			<result name="success" type="redirect" >/versionManage</result>
+		</action>
+		<action name="version" class="customerServiceAction" method="version">
+			<result name="success">/customerService/verInfoManage.jsp</result>
+		</action>
+		
+	
+		
+		<action name="addVerInfo" class="customerServiceAction" method="addVerInfo">
+			<result name="success" type="redirect">/version</result>
+		</action>
+		<action name="getVerInfo" class="customerServiceAction" method="getVerInfo">
+			<result name="success">/customerService/getVerInfo.jsp</result>
+			<result name="input">/customerService/getVerInfo.jsp</result>
+		</action>
+		<action name="updateVerInfo" class="customerServiceAction" method="updateVerInfo">
+			<result name="success">/version</result>
+			<result name="input">/version</result>
+		</action>
+		<action name="deleteVersion" class="customerServiceAction" method="deleteVersion">
+			<result name="success">/versionManage</result>
+			<result name="input">/versionManage</result>
+		</action>
+		<action name="toUpdateCompanyVersion" class="customerServiceAction" method="toUpdateCompanyVersion">
+			<result name="toUpdateCompanyVersion">/customerService/updateVersion.jsp</result>
+		</action>
+		<action name="updateCompanyVersion" class="customerServiceAction" method="updateCompanyVersion">
+			<result name="success">/versionManage</result>
+		</action>
+		
+	   <action name="getReference" class="customerServiceAction" method="getReference">
+			<result name="success">/customerService/getReference.jsp</result>
+			<result name="input">/customerService/getReference.jsp</result>
+		</action>
+		<action name="updateReference" class="customerServiceAction" method="updateReference">
+			<result name="success">/customerService/getReference.jsp</result>
+			<result name="input">/customerService/getReference.jsp</result>
+		</action>
+	    <!-- 版本管理 e -->
+	    	<!-- 产品versionproduct s -->
+		<action name="toaddversionproduct" class="customerServiceAction" method="toaddversionproduct">
+			<result name="success">/customerService/addversionProduct.jsp</result>
+			<result name="input">/customerService/addversionProduct.jsp</result>
+		</action>
+		<action name="addversionproduct" class="customerServiceAction" method="addversionproduct">
+			<result name="success">versionproductManger</result>
+		</action>
+		<action name="updateversionproduct" class="customerServiceAction" method="updateversionproduct">
+			<result name="success">versionproductManger</result>
+		</action>
+		<action name="versionproductManger" class="customerServiceAction" method="versionproductManger">
+			<result name="success">/customerService/versionProduct.jsp</result>
+		</action>
+		<action name="getversionproduct" class="customerServiceAction" method="getversionproduct">
+			<result name="success">/customerService/editversionProduct.jsp</result>
+		</action>
+					
+				
+		<action name="pversionManage" class="customerServiceAction" method="pversionManage">
+			<result name="success">/customerService/pversionManage.jsp</result>
+		</action>		
+					
+					
+					
+		<action name="paddVersion" class="customerServiceAction" method="paddversion">
+			<result name="success">/customerService/paddVersion.jsp</result>
+			<result name="input">/customerService/paddVersion.jsp</result>
+		</action>
+		
+		<action name="psaveVersionInfo" class="customerServiceAction" method="psaveVersionInfo">
+			<result name="success" type="redirect" >/pversionManage?ptype=%{ptype}</result>
+		</action>
+		<action name="pupdateVersion" class="customerServiceAction" method="pupdateVersion">
+			<result name="success" type="redirect" >/pversionManage?ptype=%{ptype}</result>
+		</action>
+		
+		<action name="pdeleteVersion" class="customerServiceAction" method="pdeleteVersion">
+			<result name="success"  type="redirect">/pversionManage?ptype=%{ptype}</result>
+			<result name="input"  type="redirect">/pversionManage?ptype=%{ptype}</result>
+		</action>	
+		
+		
+		
+		
+		<action name="pversion" class="customerServiceAction" method="pversion">
+			<result name="success">/customerService/pverInfoManage.jsp</result>
+		</action>
+		
+		<action name="paddVerInfo" class="customerServiceAction" method="paddVerInfo">
+			<result name="success" type="redirect">/pversion?ptype=%{ptype}</result>
+		</action>
+		<action name="pgetVerInfo" class="customerServiceAction" method="pgetVerInfo">
+			<result name="success">/customerService/pgetVerInfo.jsp</result>
+			<result name="input">/customerService/pgetVerInfo.jsp</result>
+		</action>
+		
+		<action name="topaddVerInfo" class="customerServiceAction" method="topaddVerInfo">
+			<result name="success" >/customerService/paddVerInfo.jsp</result>
+		</action>
+		
+		<action name="pupdateVerInfo" class="customerServiceAction" method="pupdateVerInfo">
+			<result name="success"  type="redirect">/pversion?ptype=%{ptype}</result>
+			<result name="input"  type="redirect">/pversion?ptype=%{ptype}</result>
+		</action>
+		
+				
+					
+					
+		<!--产品versionproduct e -->
+		
+		
+		
+	</package>
+</struts>
