@@ -48,18 +48,18 @@ public class Constants {
 	
 
 
-	public static final List DOMAIN_CNCOMAN_LIST = Arrays.asList(new String[]{"www.wtwd.cn","www.wtwd1.cn","111.1.41.98","111.1.41.109","111.1.41.106","192.168.18.106","127.0.0.1","app.lifengpay.com"});   
+	public static final List DOMAIN_CNCOMAN_LIST = Arrays.asList(new String[]{"www.wtwd.cn","www.wtwd1.cn","111.1.41.98","111.1.41.109","111.1.41.106","192.168.18.106","127.0.0.1","app.lifengpay.com","localhost"});   
 
 	
 	/**
 	 * 域名数组
 	 */
-	public static final List DOMAIN_INCOME_LIST = Arrays.asList(new String[]{"www.wtwd.cn","www.wtwd1.cn","111.1.41.98","111.1.41.109","111.1.41.106","192.168.18.106","127.0.0.1","app.lifengpay.com"});  
+	public static final List DOMAIN_INCOME_LIST = Arrays.asList(new String[]{"www.wtwd.cn","www.wtwd1.cn","111.1.41.98","111.1.41.109","111.1.41.106","192.168.18.106","127.0.0.1","app.lifengpay.com","localhost"});  
 	
 	/**
 	 * 域名数组
 	 */
-	public static final List DOMAIN_SALEDETAIL_LIST = Arrays.asList(new String[]{"www.wtwd.cn","www.wtwd1.cn","111.1.41.98","111.1.41.109","111.1.41.106","192.168.18.106","127.0.0.1","app.lifengpay.com"});  
+	public static final List DOMAIN_SALEDETAIL_LIST = Arrays.asList(new String[]{"www.wtwd.cn","www.wtwd1.cn","111.1.41.98","111.1.41.109","111.1.41.106","192.168.18.106","127.0.0.1","app.lifengpay.com","localhost"});  
 	
 	/**
 	 *

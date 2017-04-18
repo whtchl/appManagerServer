@@ -63,7 +63,7 @@ window.onload=function(){
      function refreshValidateCodeImage(){		
     	alert('Welcome!');
 		var timenow = new Date().getTime();
-		document.getElementById("VcodeLogin2").src = "/vcs?d=" + timenow;
+		document.getElementById("VcodeLogin2").src = "wtwd/vcs?d=" + timenow;
 		//log.info("timenow:"+timenow);
 	}
 	document.onkeydown = keyListener;
@@ -124,7 +124,7 @@ function submitYouFrom(){
 		<input id="vippassword" class="password" tabindex="2"  name="userInfo.pwd" type="password" >
 		<input id="TxtValidateCode" name="TxtValidateCode" onfocus=this.select();  type="text">
         <div id="VcodeLogin"><IMG id="VcodeLogin2" title="看不清楚，换一个"  onclick=refreshValidateCodeImage();
-													src="/vcs?d=<%=Math.random() %>" ></div>
+													src="wtwd/vcs?d=<%=Math.random() %>" ></div>
 		<p class="clearfix">
 		<a   href="#" onclick=refreshValidateCodeImage();>看不清？换一个</a>
 		</p>
